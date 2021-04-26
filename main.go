@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/gin-gonic/gin"
 	"github.com/jay-supakorn/api-service/database"
 	"github.com/jay-supakorn/api-service/functions/logger"
 	"github.com/jay-supakorn/api-service/handlers"
@@ -11,6 +12,7 @@ import (
 )
 
 func main() {
+	gin.SetMode(gin.DebugMode)
 	if err := godotenv.Load(); err != nil {
 		logger.Info.Println("failed to load env vars")
 	}
